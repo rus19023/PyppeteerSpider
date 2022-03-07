@@ -1,0 +1,15 @@
+mongo:
+  host: mongodb://localhost:27067/
+  db: spider
+  collection: pyppeteer_movies
+
+url:
+  index_url: https://spa2.scrape.center/page/{page}
+
+request:
+  timeout: 10
+  window_width: 1366
+  window_height: 768
+
+page:
+  total_page: 10
