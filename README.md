@@ -38,8 +38,7 @@ print(pyppeteer.chromium_downloader.chromiumExecutable.get("mac"))
 5. 打开淘宝镜像[](https://registry.npmmirror.com/binary.html?path=chromium-browser-snapshots/)
 6. 选取相关平台，根据版本下载
 7. 查看跳转的下载链接，复制下载链接
-8. 然后找到 python 的库管理文件夹 site-packages 中 pyppeteer 中的 chromium_downloader.py 文件并打开
-修改以下代码
+8. 然后找到 python 的库管理文件夹 site-packages 中 pyppeteer 中的 chromium_downloader.py 文件并修改以下代码
 ```
 downloadURLs = {
     'linux': f'{BASE_URL}/Linux_x64/{REVISION}/chrome-linux.zip',
