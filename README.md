@@ -70,3 +70,93 @@ python3 main.py
 ## 文章引用
 - pyppeteer 安装[](https://www.icode9.com/content-4-968162.html)
 - 崔庆才博客[](https://cuiqingcai.com/archives/)
+
+
+
+
+
+
+PyppeteerSpider features
+Use Pyppeteer to crawl related movie information
+Use mongodb to store data
+Ready to use
+First clone the code
+git clone git@github.com:StudentCWZ/PyppeteerSpider.git
+Go into the PyppeteerSpider folder
+cd PyppeteerSpider
+run as usual
+Install and configure MongoDB
+It is possible to install Mongodb locally, start Mongodb with Docker, and remotely Mongodb, as long as it can be connected normally.
+Here it is recommended to start Mongodb with Docker
+Install dependencies
+It is strongly recommended to use Conda or virtualenv to create a virtual environment. The Python version is not lower than 3.6, and 3.9 is used here.
+Then pip install the dependencies:
+pip3 install -r requirements.txt
+Configure Pyppeteer
+pip install pyppeteer (the process of installing dependencies has been installed)
+View the browser version that needs to be downloaded chromium
+import pyppeteer.chromium_downloader
+print(pyppeteer.chromium_downloader.chromiumExecutable.get("mac"))
+The output is as follows (Mac platform)
+There will be a number circled in red in the returned address and path, remember this number
+Open Taobao mirror
+Select the relevant platform and download according to the version
+View the jump download link, copy the download link
+Then find the chromium_downloader.py file in pyppeteer in python's library management folder site-packages and modify the following code
+downloadURLs = {
+    'linux': f'{BASE_URL}/Linux_x64/{REVISION}/chrome-linux.zip',
+    'mac': f'{BASE_URL}/Mac/{REVISION}/chrome-mac.zip',
+    'win32': f'{BASE_URL}/Win/{REVISION}/{windowsArchive}.zip',
+    'win64': f'{BASE_URL}/Win_x64/{REVISION}/{windowsArchive}.zip',
+}
+Modified as follows:
+downloadURLs = {
+    'linux': f'{BASE_URL}/Linux_x64/{REVISION}/chrome-linux.zip',
+    'mac': f'https://cdn.npmmirror.com/binaries/chromium-browser-snapshots/Mac/588429/chrome-mac.zip',
+    'win32': f'{BASE_URL}/Win/{REVISION}/{windowsArchive}.zip',
+    'win64': f'{BASE_URL}/Win_x64/{REVISION}/{windowsArchive}.zip',
+}
+save
+Initialize pyppeteer
+pyppeteer-install
+run the project
+python3 main.py
+Article citations
+pyppeteer install
+Cui Qingcai Blog
+About
+No description, website, or topics provided.
+Topics
+Resources
+ Readme
+License
+ MIT license
+Stars
+ 0 stars
+Watchers
+ 0 watching
+Forks
+ 1 fork
+Releases
+No published releases
+Create a new release
+Packages
+No packages published
+Publish your first package
+Languages
+Python
+100.0%
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
